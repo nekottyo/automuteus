@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/automuteus/utils/pkg/game"
 
@@ -57,6 +58,7 @@ func emptyStatusEmojis() AlivenessEmojis {
 
 func (bot *Bot) addAllMissingEmojis(s *discordgo.Session, guildID string, alive bool, serverEmojis []*discordgo.Emoji) {
 	for i, emoji := range GlobalAlivenessEmojis[alive] {
+		time.Sleep(time.Second * 1)
 		alreadyExists := false
 		for _, v := range serverEmojis {
 			if v.Name == emoji.Name {

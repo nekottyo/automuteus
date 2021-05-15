@@ -4,10 +4,10 @@ services:
   automuteus:
     # Either:
     # - Use a prebuilt image
-    image: denverquane/amongusdiscord:${AUTOMUTEUS_TAG:?err}
+    #image: denverquane/amongusdiscord:${AUTOMUTEUS_TAG:?err}
     # - Build image from local source
-    #build: .
-    # - Build image from github directly
+    build: .
+    #  - Build image from github directly
     #build: http://github.com/denverquane/automuteus.git
 
     restart: always
